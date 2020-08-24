@@ -1,13 +1,9 @@
 ---
 title: "Lab 01 - Hello R!"
 author: "Emily Lada"
-date: "6/18/2020"
-output: 
-  tufte::tufte_html:
-    css: lab.css
-    tufte_variant: "envisioned"
-    highlight: pygments
-link-citations: yes
+date: "6/25/2020"
+output: html_document
+  
 ---
 
 ```{marginfigure}
@@ -90,7 +86,7 @@ Before we can get started we need to take care of some required housekeeping. Sp
 
 To do so, follow these steps:
 
-- Go to the *Terminal* pane
+- Go to the *Terminal* pane (lower left in R Studio)
 - Type the following two lines of code, replacing the information in the quotation marks with your info:
 
 ```{bash eval=FALSE}
@@ -153,14 +149,14 @@ In order to push your changes to GitHub, click on **Push**. This will prompt a d
 In this lab we will use the `tidyverse` and `datasauRus` packages. We can load 
 them using the following:
 
-```{r load-packages}
+```{r load-packages, message = FALSE}
 library(tidyverse)
 library(datasauRus)
 ```
 
 # Data
 
-The data frame we will be working with today is called `datasaurus_dozen` and it's in the `datasauRus` package. Actually, this single data frame contains 13 datasets, designed to show us  why data visualisation is important and how summary statistics alone can be misleading. The different datasets are maked by the `dataset` variable.
+The data frame we will be working with today is called `datasaurus_dozen` and it's in the `datasauRus` package. Actually, this single data frame contains 13 datasets, designed to show us  why data visualization is important and how summary statistics alone can be misleading. The different datasets are marked by the `dataset` variable.
 
 To find out more about the dataset, type the following in your Console: `?datasaurus_dozen`. A question mark before the name of an object will always bring up its help file. This command must be ran in the Console.
 
@@ -183,9 +179,9 @@ The original Datasaurus (`dino`) was created by Alberto Cairo in [this great blo
 
 Below is the code you will need to complete this exercise. Basically, the answer is already given, but you need to successfully knit the Rmd document.  To display the graph and correlation in your Rmd document, remove the `eval = FALSE` option in each code chunk.
 
-Start with the `datasaurus_dozen` and pipe it into the `filter` function to filter for observations where `dataset == "dino"`. Store the resulting filtered data frame as a new data frame called `dino_data`.
+Start with the `datasaurus_dozen` dataset and pipe it into the `filter` function to filter for observations where `dataset == "dino"`. Store the resulting filtered data frame as a new data frame called `dino_data`.
 
-```{r}
+```{r eval = FALSE}
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 ```
@@ -259,11 +255,13 @@ knitr::include_graphics("img/fig-resize-global.png")
 
 Click on the gear icon in on top of the R Markdown document, and select "Output Options..." in the dropdown menu. In the pop up dialogue box go to the Figures tab and change the height and width of the figures, and hit OK when done. Then, knit your document and see how you like the new sizes. Change and knit again and again until you're happy with the figure sizes. Note that these values get saved in the YAML.
 
+
+You can also use different figure sizes for different figures. To do so click on the gear icon within the chunk where you want to make a change. Changing the figure sizes will add new options to these chunks: `fig.width` and `fig.height`. You can change them by defining different values directly in your R Markdown document as well.
+
+
 ```{r fig-resize-local, fig.margin = TRUE, echo = FALSE, fig.width=3}
 knitr::include_graphics("img/fig-resize-local.png")
 ```
-
-You can also use different figure sizes for different figures. To do so click on the gear icon within the chunk where you want to make a change. Changing the figure sizes will add new options to these chunks: `fig.width` and `fig.height`. You can change them by defining different values directly in your R Markdown document as well.
 
 
 - **Change the look of your report:** 
