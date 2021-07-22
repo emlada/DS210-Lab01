@@ -1,7 +1,7 @@
 ---
 title: "Lab 01 - Hello R!"
 author: "Emily Lada"
-date: "8/25/2020"
+date: "8/01/2021"
 output: html_document
   
 ---
@@ -53,28 +53,6 @@ knitr::include_graphics("img/paste-gh-repo-url.png")
 
 - Click Create Project, and you're good to go!
 
-# Packages
-
-In this lab we will work with two packages: `datasauRus` which contains the dataset, and `tidyverse` which is a collection of packages for doing data analysis in a "tidy" way.
-
-Install these packages by running the following in the console:
-
-```{r eval = FALSE}
-install.packages("tidyverse")
-install.packages("datasauRus")
-```
-
-Now that the necessary packages are installed, you should be able to Knit your document and see the results.
-
-If you'd like to run your code in the Console as well, you'll also need to load the packages there. To do so, run the following in the console: 
-
-```{r eval = FALSE}
-library(tidyverse) 
-library(datasauRus)
-```
-
-Note that the packages are also loaded with the same commands in your R Markdown document below.
-
 # Housekeeping
 
 ```{marginfigure}
@@ -107,6 +85,28 @@ To confirm that the changes have been implemented, run the following
 git config --global user.email
 git config --global user.name
 ```
+# Packages
+
+In this lab we will work with two packages: `datasauRus` which contains the dataset, and `tidyverse` which is a collection of packages for doing data analysis in a "tidy" way.
+
+Install these packages by running the following in the console:
+
+```{r eval = FALSE}
+install.packages("tidyverse")
+install.packages("datasauRus")
+```
+
+Now that the necessary packages are installed, you should be able to Knit your document and see the results.
+
+If you'd like to run your code in the Console as well, you'll also need to load the packages there. To do so, run the following in the console: 
+
+```{r eval = FALSE}
+library(tidyverse) 
+library(datasauRus)
+```
+
+Note that the packages are also loaded with the same commands in your R Markdown document below.
+
 
 # Warm up
 
