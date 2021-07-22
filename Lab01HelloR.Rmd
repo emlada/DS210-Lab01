@@ -6,17 +6,19 @@ output: html_document
   
 ---
 
-```{marginfigure}
+The main goal of this lab is to introduce you to R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions. 
+
+```{r eval = FALSE}
 R is the name of the programming language itself and RStudio is a convenient interface.
 ```
 
-The main goal of this lab is to introduce you to R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions. 
-
-```{marginfigure}
-git is a version control system (like "Track Changes" features from Microsoft Word on steroids) and GitHub is the home for your Git-based projects on the internet (like DropBox but much, much better).
-```
-
 An additional goal is to introduce you to git and GitHub, which is the collaboration and version control system that we will be using throughout the course.
+
+```{r eval = FALSE}
+git is a version control system (like "Track Changes" features from
+Microsoft Word on steroids) and GitHub is the home for your Git-based
+projects on the internet (like DropBox but much, much better).
+```
 
 As the labs progress, you are encouraged to explore beyond what the labs dictate; a willingness to experiment will make you a much better programmer. Before we get to that stage, however, you need to build some basic fluency in R. Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands.
 
@@ -55,7 +57,7 @@ knitr::include_graphics("img/paste-gh-repo-url.png")
 
 # Housekeeping
 
-```{marginfigure}
+```{r eval = FALSE}
 Your email address is the address tied to your GitHub account and your name should be first and last name.
 ```
 
@@ -112,12 +114,11 @@ Note that the packages are also loaded with the same commands in your R Markdown
 
 Before we introduce the data, let's warm up with some simple exercises. 
 
-
-```{marginfigure}
-The top portion of your R Markdown file (between the three dashed lines) is called YAML. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML and that it contains meta information about your document.
-```
-
 ## YAML: 
+
+The top portion of your R Markdown file (between the three dashed lines) is called YAML. It is a human friendly data serialization standard for all
+programming languages. All you need to know is that this area is called the
+YAML and that it contains meta information about your document.
 
 Open the R Markdown (Rmd) file in your project, change the author name and date, and knit the document.
 
@@ -205,8 +206,9 @@ For the second part of this exercise, we need to calculate a summary statistic: 
 
 But, for illustrative purposes, let's calculate the correlation coefficient between `x` and `y`.
 
-```{marginfigure}
-Start with `dino_data` and calculate a summary statistic that we will call `r` as the `cor`relation between `x` and `y`.
+```{r eval = FALSE}
+Start with `dino_data` and calculate a summary statistic that we will call
+`r` as the `cor`relation between `x` and `y`.
 ```
 
 ```{r eval = FALSE}
@@ -224,8 +226,9 @@ dino_data %>%
 
 *You should pause again, commit changes with the commit message "Added answer for Exercise 4", and push.*
 
-```{marginfigure}
-Facet by the dataset variable, placing the plots in a 3 column grid, and don't add a legend.
+```{r eval = FALSE}
+Facet by the dataset variable, placing the plots in a 3 column grid, and
+don't add a legend.
 ```
 
 5. Finally, let's plot all datasets at once. In order to do this we will make use of facetting.  To make the output appear in your knitted document, remove the `eval = FALSE` option in the code chunks below.
