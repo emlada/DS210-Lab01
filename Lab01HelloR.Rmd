@@ -6,19 +6,11 @@ output: html_document
   
 ---
 
+
 The main goal of this lab is to introduce you to R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions. 
 
-```{r eval = FALSE}
-R is the name of the programming language itself and RStudio is a convenient interface.
-```
 
 An additional goal is to introduce you to git and GitHub, which is the collaboration and version control system that we will be using throughout the course.
-
-```{r eval = FALSE}
-git is a version control system (like "Track Changes" features from
-Microsoft Word on steroids) and GitHub is the home for your Git-based
-projects on the internet (like DropBox but much, much better).
-```
 
 As the labs progress, you are encouraged to explore beyond what the labs dictate; a willingness to experiment will make you a much better programmer. Before we get to that stage, however, you need to build some basic fluency in R. Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands.
 
@@ -91,7 +83,7 @@ git config --global user.name
 
 In this lab we will work with two packages: `datasauRus` which contains the dataset, and `tidyverse` which is a collection of packages for doing data analysis in a "tidy" way.
 
-Install these packages by running the following in the console:
+Install these packages by running the following in the console (if you have not installed them previously):
 
 ```{r eval = FALSE}
 install.packages("tidyverse")
@@ -99,16 +91,6 @@ install.packages("datasauRus")
 ```
 
 Now that the necessary packages are installed, you should be able to Knit your document and see the results.
-
-If you'd like to run your code in the Console as well, you'll also need to load the packages there. To do so, run the following in the console: 
-
-```{r eval = FALSE}
-library(tidyverse) 
-library(datasauRus)
-```
-
-Note that the packages are also loaded with the same commands in your R Markdown document below.
-
 
 # Warm up
 
@@ -142,7 +124,7 @@ You don't have to commit after every change, this would get quite cumbersome. Yo
 
 Now that you have made an update and committed this change, it's time to push these changes to the web! Or more specifically, to your repo on GitHub. Why? So that others can see your changes. And by others, we mean the course instructor (your repos in this course are private to you and the instructor, only). 
 
-In order to push your changes to GitHub, click on **Push**. This will prompt a dialogue box where you first need to enter your user name, and then your password. This might feel cumbersome, and it is! You *will* learn later how to save your password so you don't have to enter it every time. But for this one assignment, you will have to manually enter it each time you push in order to gain some experience with it.
+In order to push your changes to GitHub, click on **Push**. 
 
 
 # Packages
@@ -163,6 +145,7 @@ To find out more about the dataset, type the following in your Console: `?datasa
 
 1. Based on the help file, how many rows and how many columns does the `datasaurus_dozen` file have? What are the variables included in the data frame? Add your responses to your lab report. When you're done, commit your changes with the commit message "Added answer for Exercise 1", and push.
 
+
 The code below makes a *frequency table* of the dataset variable:
 
 ```{r}
@@ -178,7 +161,7 @@ The original Datasaurus (`dino`) was created by Alberto Cairo in [this great blo
 
 2. Plot `y` vs. `x` for the `dino` dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset.
 
-Below is the code you will need to complete this exercise. Basically, the answer is already given, but you need to successfully knit the Rmd document.  To display the graph and correlation in your Rmd document, remove the `eval = FALSE` option in each code chunk.
+Below is the code you will need to complete this exercise. Basically, the answer is already given, but you need to successfully knit the Rmd document.  To display the graph and correlation in your Rmd document, remove the `eval = FALSE` option in each code chunk below.
 
 Start with the `datasaurus_dozen` dataset and pipe it into the `filter` function to filter for observations where `dataset == "dino"`. Store the resulting filtered data frame as a new data frame called `dino_data`.
 
@@ -204,12 +187,7 @@ If this seems like a lot, it is. And you will learn about the philosophy of buil
 
 For the second part of this exercise, we need to calculate a summary statistic: the correlation coefficient. The correlation coefficient, often referred to as $r$ in statistics, measures the linear association between two variables. You will see that some of the pairs of variables we plot do not have a linear relationship between them. This is exactly why we want to visualize first: visualize to assess the form of the relationship, and calculate $r$ only if relevant. In this case, calculating a correlation coefficient really doesn't make sense since the relationship between `x` and `y` is definitely not linear -- it's dinosaurial!
 
-But, for illustrative purposes, let's calculate the correlation coefficient between `x` and `y`.
-
-```{r eval = FALSE}
-Start with `dino_data` and calculate a summary statistic that we will call
-`r` as the `cor`relation between `x` and `y`.
-```
+But, for illustrative purposes, let's calculate the correlation coefficient between `x` and `y`:
 
 ```{r eval = FALSE}
 dino_data %>%
@@ -226,10 +204,6 @@ dino_data %>%
 
 *You should pause again, commit changes with the commit message "Added answer for Exercise 4", and push.*
 
-```{r eval = FALSE}
-Facet by the dataset variable, placing the plots in a 3 column grid, and
-don't add a legend.
-```
 
 5. Finally, let's plot all datasets at once. In order to do this we will make use of facetting.  To make the output appear in your knitted document, remove the `eval = FALSE` option in the code chunks below.
 
