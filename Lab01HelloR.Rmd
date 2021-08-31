@@ -1,7 +1,7 @@
 ---
 title: "Lab 01 - Hello R!"
 author: "Your Name"
-date: "8/01/2021"
+date: "8/31/2021"
 output: html_document
   
 ---
@@ -14,13 +14,6 @@ An additional goal is to introduce you to git and GitHub, which is the collabora
 
 As the labs progress, you are encouraged to explore beyond what the labs dictate; a willingness to experiment will make you a much better programmer. Before we get to that stage, however, you need to build some basic fluency in R. Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands.
 
-# Authentication
-
-In this course, we will push and pull files from Github using HTTPS.  You will need to use a personal access token (PAT) as your credential for HTTPS operations. In the past, this PAT was generated automatically for Windows users.  For Mac users, click on the link below to create your PAT.  You will need to be logged into your github account.  You can choose the expiration date to be whatever you like, but I suggest making it at least 5 months from today to last the duration of this class.  For the scope of the token, you can select all options to be safe.
-
-[Create PAT in Github](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-
-Be sure to copy this PAT to a safe location!  You will need it later when you create your first project.
 
 # Getting started
 
@@ -52,7 +45,15 @@ knitr::include_graphics("img/paste-gh-repo-url.png")
 
 - Choose a directory on your machine where the project will be saved.  It is a good idea to create a directory just for projects for this course.
 
-- Click Create Project.  You may get a prompt to enter your Github username.  After that, you should get another prompt to enter a password.  This is the field where you should paste your PAT.  (In the past Windows users did not see these prompts, but Mac users did)
+- Click Create Project.  You may get Github prompts to enter a username and password.  If so, please follow the steps in the **Authentication** section below to create a personal access token (PAT) in Github.  Once you generate your PAT, paste it into the password field (for username, use your Github username).  In the past Windows users did not see username and password prompts, but Mac users did.  After creating your first Git project in R Studio, your computer should remember your PAT, and you should not be prompted for a username and password when you create R Studio Git projects in the future.
+
+# Authentication 
+
+In this course, we will push and pull files from Github using HTTPS.  When you create your first git project in R Studio, you *may* be prompted for a username and password (in past classes, Mac users were, but Windows users were not).  If you are prompted for a username and password when you create your first R Studio Git project, you will need to use a personal access token (PAT) as your credential for HTTPS operations. Click on the link below for instructions on creating your PAT in Github.  You will need to be logged into your github account.  You can choose the expiration date for the PAT to be whatever you like, but I suggest making it at least 5 months from today to last the duration of this class.  For the scope of the token, you can select all options to be safe.
+
+[Create PAT in Github](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+Be sure to copy this PAT to a safe location in case you need it at a later time!  
 
 # Housekeeping
 
@@ -119,7 +120,7 @@ knitr::include_graphics("img/yaml-raw-to-rendered.png")
 
 Then go to the Git pane in your RStudio.
 
-If you have made changes to your Rmd file, you should see it listed here. Click on it to select it in this list and then click on **Diff**. This shows you the *diff*erence between the last committed state of the document and its current state that includes your changes. If you're happy with these changes, check the "Staged" box for the Rmd file and the html file, write "Update author name" in the **Commit message** box and hit **Commit**.
+If you have made changes to your Rmd file, you should see it listed here. Click on it to select it in this list and then click on **Diff**. This shows you the *diff*erence between the last committed state of the document and its current state that includes your changes. If you're happy with these changes, check the "Staged" box for the Rmd file and the html file, write "Update author name" in the **Commit message** box and hit **Commit**.  Notice that in the Git pane, those files with changes will have a blue box with the letter "M" next to them.
 
 ```{r update-author-name-commit, fig.fullwidth=TRUE, echo = FALSE}
 knitr::include_graphics("img/update-author-name-commit.png")
@@ -185,7 +186,7 @@ Second, the assignment operator: `<-`, assigns the name `dino_data` to the filte
 
 Next, we need to visualize these data. We will use the `ggplot` function for this. Its first argument is the data you're visualizing. Next we define the `aes`thetic mappings. In other words, the columns of the data that get mapped to certain aesthetic features of the plot, e.g. the `x` axis will represent the variable called `x` and the `y` axis will represent the variable called `y`. Then, we add another layer to this plot where we define which `geom`etric shapes we want to use to represent each observation in the data. In this case we want these to be points, so we will use `geom_point`.
 
-```{r eval = FALSE, fig.fullwidth=TRUE}
+```{r  eval = FALSE, fig.fullwidth=TRUE}
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
@@ -212,7 +213,7 @@ dino_data %>%
 *You should pause again, commit changes with the commit message "Added answer for Exercise 4", and push.*
 
 
-5. Finally, let's plot all datasets at once. In order to do this we will make use of facetting.  To make the output appear in your knitted document, remove the `eval = FALSE` option in the code chunks below.
+5. Finally, let's plot all datasets at once. In order to do this we will make use of faceting.  To make the output appear in your knitted document, remove the `eval = FALSE` option in the code chunks below.
 
 ```{r all-viz,  eval = FALSE, fig.fullwidth=TRUE}
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
