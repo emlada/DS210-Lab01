@@ -2,8 +2,9 @@
 title: "Lab 01 - Hello R!"
 author: "Your Name"
 date: "8/30/2022"
-output: html_document
-  
+output: 
+  html_document: 
+    theme: cerulean
 ---
 
 
