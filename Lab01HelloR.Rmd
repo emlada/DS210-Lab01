@@ -172,8 +172,7 @@ The code below makes a *frequency table* of the dataset variable:
 
 ```{r}
 datasaurus_dozen %>%
-  count(dataset) %>%
-  print(13)
+  count(dataset)
 ```
 
 
