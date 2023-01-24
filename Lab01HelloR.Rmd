@@ -241,8 +241,7 @@ And we can use the `group_by` function to generate all the summary correlation c
 ```{r all-r, eval = FALSE}
 datasaurus_dozen %>%
   group_by(dataset) %>%
-  summarize(r = cor(x, y)) %>%
-  print(13)
+  summarize(r = cor(x, y))
 ```
 *You should pause again, commit changes with the commit message "Added answer for Exercise 5", and push.*
 
