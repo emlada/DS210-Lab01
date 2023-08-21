@@ -67,6 +67,8 @@ See the screenshot below for what you should see on the R command line.
 
 ![](img/setCredential.png)
 
+In the future if you create a new PAT, it is easy to update it in R.  First run `gitcreds::gitcreds_set()` as above and select the option to "Replace these credentials".  You then will be prompted to paste your new PAT.
+
 # Creating a Git Project in R Studio
 Each of your assignments will begin with the following steps. You can always refer back to this lab for a detailed list of the steps for getting started with any assignment.
 
