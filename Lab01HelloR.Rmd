@@ -1,7 +1,7 @@
 ---
 title: "Lab 01 - Hello R!"
 author: "Your Name"
-date: "8/19/2023"
+date: "8/19/2024"
 output: 
   html_document: 
     theme: cerulean
@@ -178,7 +178,7 @@ datasaurus_dozen %>%
 ```
 
 
-The original Datasaurus (`dino`) was created by Alberto Cairo in [this great blog post](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html). The other Dozen were generated using simulated annealing and the process is described in the paper *Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics* through Simulated Annealing by Justin Matejka and George Fitzmaurice. In the paper, the authors simulate a variety of datasets that have the same summary statistics as the Datasaurus dataset but have very different distributions.
+The original Datasaurus (`dino`) was created by Alberto Cairo in a blog post. The other Dozen were generated using simulated annealing and the process is described in the paper [Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing](https://dl.acm.org/doi/10.1145/3025453.3025912) by Justin Matejka and George Fitzmaurice. In the paper, the authors simulate a variety of datasets that have the same summary statistics as the Datasaurus dataset but have very different distributions.
 
 # Data visualization and summary
 
