@@ -164,9 +164,13 @@ To view the `datasaurus_dozen` data set, run the following command:
 view(datasaurus_dozen)
 ```
 
+
 To find out more about the dataset, type the following in your Console: `?datasaurus_dozen`. A question mark before the name of an object will always bring up its help file. This command must be run in the Console.
 
 1. Based on the help file, how many rows and how many columns does the `datasaurus_dozen` file have? What are the variables included in the data frame? Add your responses to your lab report. When you're done, commit your changes with the commit message "Added answer for Exercise 1", and push.
+
+There are `r nrow(datasaurus_dozen)` and 3 in this dataset.
+
 
 
 
